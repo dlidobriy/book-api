@@ -1,0 +1,26 @@
+server:
+  port: 80
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/school_book
+    username: postgres
+    password: root
+  sql:
+    init:
+      mode: always
+  mvc:
+    servlet:
+      path: /api
+  servlet:
+    multipart:
+      max-file-size: 100MB
+
+
+jwt:
+  secretKey: dlidobriy
+  expireTime: 864000000
