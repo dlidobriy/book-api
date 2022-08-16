@@ -1,8 +1,8 @@
 server:
   error:
     include-message: always
-  port: 8080
-#  port: 5432
+#  port: 8080
+  port: 5432
 spring:
   jpa:
     show-sql: true
@@ -10,13 +10,13 @@ spring:
       ddl-auto: create
   datasource:
     driver-class-name: org.postgresql.Driver
-#    url: postgres://mvbsllbykekfya:da868d1a28abeb16660bc0ba43018f199edacae11c974a87ff434e9c0414ced1@ec2-3-219-229-143.compute-1.amazonaws.com:5432/d3v2mkt61b14pm
-#    password: da868d1a28abeb16660bc0ba43018f199edacae11c974a87ff434e9c0414ced1
-#    username: mvbsllbykekfya
+    url:postgres://ismajjsbdwpbwv:5b43fe7ed37202a1e8b1c4ed72527338eca8202ed07ba7e432a828acfde48a54@ec2-44-207-126-176.compute-1.amazonaws.com:5432/ddaa5vmsks3taj
+    password: 5b43fe7ed37202a1e8b1c4ed72527338eca8202ed07ba7e432a828acfde48a54
+    username: ismajjsbdwpbwv
 
-    url: jdbc:postgresql://localhost:5432/book_api
-    username: postgres
-    password: root
+#    url: jdbc:postgresql://localhost:5432/book_api
+#    username: postgres
+#    password: root
   sql:
     init:
       mode: always
