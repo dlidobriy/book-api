@@ -1,5 +1,7 @@
-#server:
-# port: 80
+server:
+  error:
+    include-message: always
+  port: 8080
 #  port: 5432
 spring:
   jpa:
@@ -8,13 +10,13 @@ spring:
       ddl-auto: create
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: postgres://mvbsllbykekfya:da868d1a28abeb16660bc0ba43018f199edacae11c974a87ff434e9c0414ced1@ec2-3-219-229-143.compute-1.amazonaws.com:5432/d3v2mkt61b14pm
-    password: da868d1a28abeb16660bc0ba43018f199edacae11c974a87ff434e9c0414ced1
-    username: mvbsllbykekfya
+#    url: postgres://mvbsllbykekfya:da868d1a28abeb16660bc0ba43018f199edacae11c974a87ff434e9c0414ced1@ec2-3-219-229-143.compute-1.amazonaws.com:5432/d3v2mkt61b14pm
+#    password: da868d1a28abeb16660bc0ba43018f199edacae11c974a87ff434e9c0414ced1
+#    username: mvbsllbykekfya
 
-#    url: jdbc:postgresql://localhost:5432/school_book
-#    username: postgres
-#    password: root
+    url: jdbc:postgresql://localhost:5432/book_api
+    username: postgres
+    password: root
   sql:
     init:
       mode: always
@@ -24,8 +26,13 @@ spring:
   servlet:
     multipart:
       max-file-size: 10MB
+springdoc:
+  swagger-ui:
+    path: /apidoc
+    version: 2
 
 
 jwt:
   secretKey: dlidobriy
   expireTime: 864000000
+

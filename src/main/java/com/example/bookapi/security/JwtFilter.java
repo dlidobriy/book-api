@@ -23,25 +23,29 @@ public class JwtFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        if (!request.getRequestURI().startsWith("/api/auth/")) {
+        if (!request.getRequestURI().startsWith("/api/auth/") || !request.getRequestURI().startsWith("/api/apidoc/")) {
             String token = request.getHeader("Authorization");
-            token = token.substring(7);
-            if (jwtProvider.validateToken(token)) {
-                if (jwtProvider.expireToken(token)) {
-                    String usernameFromToken = jwtProvider.getUsernameFromToken(token);
-                    UserDetails userDetails = authServise.loadUserByUsername(usernameFromToken);
-                    System.out.println(userDetails);
-                    UsernamePasswordAuthenticationToken authenticationToken =
-                            new UsernamePasswordAuthenticationToken(
-                                    userDetails, userDetails.getPassword(), userDetails.getAuthorities());
-                    System.out.println(authenticationToken);
-                    SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-                    System.out.println(SecurityContextHolder.getContext().getAuthentication());
+            if (token != null) {
+                token = token.substring(7);
+                if (jwtProvider.validateToken(token)) {
+                    if (jwtProvider.expireToken(token)) {
+                        String usernameFromToken = jwtProvider.getUsernameFromToken(token);
+                        UserDetails userDetails = authServise.loadUserByUsername(usernameFromToken);
+                        System.out.println(userDetails);
+                        UsernamePasswordAuthenticationToken authenticationToken =
+                                new UsernamePasswordAuthenticationToken(
+                                        userDetails, userDetails.getPassword(), userDetails.getAuthorities());
+                        System.out.println(authenticationToken);
+                        SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+                        System.out.println(SecurityContextHolder.getContext().getAuthentication());
+                    }
                 }
             }
+
         }
+
         doFilter(request, response, filterChain);
+
+
     }
-
-
 }
