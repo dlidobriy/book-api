@@ -1,7 +1,6 @@
 server:
   error:
     include-message: always
-#  port: 8080
   port: 5603
 spring:
   jpa:
@@ -9,14 +8,10 @@ spring:
     hibernate:
       ddl-auto: create
   datasource:
-    driver-class-name: org.postgresql.Driver
     url: postgresql://postgres:pmN8g2no4pzDVlRbEYv7@containers-us-west-180.railway.app:5603/railway
-    password: PGPASSWORD=pmN8g2no4pzDVlRbEYv7
-
-
-#    url: jdbc:postgresql://localhost:5432/book_api
     username: postgres
-#    password: root
+    driver-class-name:
+    password: pmN8g2no4pzDVlRbEYv7
   sql:
     init:
       mode: always
