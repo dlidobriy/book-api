@@ -10,12 +10,12 @@ spring:
       ddl-auto: create
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: postgres://lpmelpxkeikazw:0cb4c4e6147fcb36103ce0c2c5d0d0fe0fab85dd6199dd7bff48fb725fcd65d8@ec2-52-204-195-41.compute-1.amazonaws.com:5432/df0tlusd7dje1l
-    password: 0cb4c4e6147fcb36103ce0c2c5d0d0fe0fab85dd6199dd7bff48fb725fcd65d8
-    username: lpmelpxkeikazw
+    url: postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}
+    password: pmN8g2no4pzDVlRbEYv7
+
 
 #    url: jdbc:postgresql://localhost:5432/book_api
-#    username: postgres
+    username: postgres
 #    password: root
   sql:
     init:
