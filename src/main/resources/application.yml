@@ -1,17 +1,19 @@
 server:
   error:
     include-message: always
-  port: 5603
+  port: 5432
 spring:
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: create
   datasource:
-    url: postgresql://postgres:pmN8g2no4pzDVlRbEYv7@containers-us-west-180.railway.app:5603/railway
-    username: postgres
+    url: postgres://yldqlwlylwnfhf:a8173723553798df8b959576a8037a94b3ea799351c40dc74d20e2f87e84d018@ec2-3-225-213-67.compute-1.amazonaws.com:5432/dem2idqjecippu
+
+    username: yldqlwlylwnfhf
     driver-class-name:
-    password: pmN8g2no4pzDVlRbEYv7
+    password: a8173723553798df8b959576a8037a94b3ea799351c40dc74d20e2f87e84d018
+
   sql:
     init:
       mode: always
