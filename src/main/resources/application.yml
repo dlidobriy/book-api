@@ -8,11 +8,11 @@ spring:
     hibernate:
       ddl-auto: create
   datasource:
-    url: postgres://yldqlwlylwnfhf:a8173723553798df8b959576a8037a94b3ea799351c40dc74d20e2f87e84d018@ec2-3-225-213-67.compute-1.amazonaws.com:5432/dem2idqjecippu
+    url: postgres://dlidobriy:h3JDA08wlXnqPmJ8m0A39dCZPspVBjgs@dpg-cmihfnud3nmc73cjg200-a/dlidobriy_zt92
 
-    username: yldqlwlylwnfhf
-    driver-class-name:
-    password: a8173723553798df8b959576a8037a94b3ea799351c40dc74d20e2f87e84d018
+    username: dlidobriy
+    driver-class-name: org.postgresql.Driver
+    password: h3JDA08wlXnqPmJ8m0A39dCZPspVBjgs
 
   sql:
     init:
